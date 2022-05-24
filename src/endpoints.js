@@ -1,12 +1,6 @@
-import "dotenv/config"
-import {dobro, somar} from './services.js'
+import { Router } from 'express'
 
-import express from "express"
-import cors from "cors"
-
-const server = express();
-server.use(cors());
-server.use(express.json());
+const server = Router();
 
 server.get('/ping', (req,resp) => {
     resp.send('pong');
@@ -49,6 +43,3 @@ server.post('/somar', (req, resp) => {
         })
     }
 })
-
-server.listen(process.env.PORT,
-              () => console.log(`API esta online na porta ${process.env.PORT}`));
