@@ -1,5 +1,6 @@
-import { Router } from 'express'
+import {dobro, somar} from './services.js'
 
+import { Router } from 'express'
 const server = Router();
 
 server.get('/ping', (req,resp) => {
@@ -43,3 +44,5 @@ server.post('/somar', (req, resp) => {
         })
     }
 })
+
+export default server;
